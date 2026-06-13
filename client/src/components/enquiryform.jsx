@@ -14,7 +14,7 @@ function EnquiryForm() {
     e.preventDefault();
     setStatus("loading");
     try {
-      await axios.post("http://localhost:5000/api/enquiry", formData);
+      await axios.post("https://dolphine-api-m31w.onrender.com/api/enquiry", formData);
       setStatus("success");
       setFormData({ name: "", phone: "", project: "" });
     } catch {
