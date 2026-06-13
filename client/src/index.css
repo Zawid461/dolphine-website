@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon: #00d4ff;
+  --neon-dim: rgba(0, 212, 255, 0.15);
+  --neon-border: rgba(0, 212, 255, 0.25);
+  --bg: #03080f;
+  --bg-card: #07111c;
+  --bg-card2: #0a1828;
+  --text: #e8f4ff;
+  --text-muted: #7a9bb5;
+  --text-dim: #3d5a73;
+  --accent: #00d4ff;
+  --accent2: #0090ff;
+  --glow: 0 0 40px rgba(0, 212, 255, 0.18);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 10px; }
+
+/* GRID NOISE BACKGROUND */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* GLASS CARD */
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-border);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+}
+
+.glass:hover {
+  border-color: rgba(0, 212, 255, 0.45);
+  box-shadow: var(--glow);
+}
+
+/* GLOW BUTTON */
+.btn-primary {
+  background: linear-gradient(135deg, #00d4ff, #0090ff);
+  color: #000;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.6), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neon);
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: 50px;
+  border: 1px solid var(--neon-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn-outline:hover {
+  background: var(--neon-dim);
+  border-color: var(--neon);
+}
+
+/* SECTION */
+section {
+  padding: 100px 24px;
+}
+
+/* INPUTS */
+input, textarea, select {
+  background: rgba(0, 212, 255, 0.04);
+  border: 1px solid var(--neon-border);
+  color: white;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-dim);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* SECTION LABEL */
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* HEADING */
+.section-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.section-heading span {
+  background: linear-gradient(135deg, #00d4ff, #0090ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* DIVIDER LINE */
+.neon-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, transparent);
+  border-radius: 4px;
+  margin: 20px 0 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  section { padding: 70px 16px; }
+}
