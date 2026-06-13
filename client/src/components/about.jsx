@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import DolphinLogo from "./Logo";
+import DolphinLogo from "./logo";
 
 function About() {
   const highlights = [

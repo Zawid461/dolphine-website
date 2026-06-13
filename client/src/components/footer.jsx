@@ -1,4 +1,4 @@
-import DolphinLogo from "./Logo";
+import DolphinLogo from "./logo";
 
 function Footer() {
   const links = [
