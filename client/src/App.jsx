@@ -5,7 +5,7 @@ import Services from "./components/services";
 import Projects from "./components/projects";
 import About from "./components/about";
 import Testimonials from "./components/testimonials";
-import FAQ from "./components/FAQ";
+import FAQ from "./components/faq";
 import Contact from "./components/contact";
 import EnquiryForm from "./components/enquiryform";
 import Footer from "./components/footer";
