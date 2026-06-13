@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DolphinLogo from "./DolphinLogo";
+import DolphinLogo from "./Logo";
 
 function AdminDashboard() {
   const [enquiries, setEnquiries] = useState([]);

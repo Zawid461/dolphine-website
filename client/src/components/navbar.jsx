@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import DolphinLogo from "./DolphinLogo";
+import DolphinLogo from "./Logo";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);

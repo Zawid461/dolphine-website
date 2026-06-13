@@ -1,10 +1,12 @@
 import logo from "../assets/logo.jpeg";
 
 function DolphinLogo({ size = 40, className = "" }) {
+
   return (
+
     <img
       src={logo}
-      alt="DOLPHIN Logo"
+      alt="DOLPHINE Logo"
       width={size}
       height={size}
       className={className}
@@ -16,7 +18,9 @@ function DolphinLogo({ size = 40, className = "" }) {
         display: "block",
       }}
     />
+
   );
+
 }
 
 export default DolphinLogo;
