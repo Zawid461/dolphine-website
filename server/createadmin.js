@@ -7,7 +7,7 @@ const Admin = require("./models/Admin");
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
 
-    const hashedPassword = await bcrypt.hash("zawid3005", 10);
+    const hashedPassword = await bcrypt.hash("Dolphine@2026", 10);
 
     const admin = new Admin({
       username: "ahamed",
