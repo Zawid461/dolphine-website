@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DolphinLogo from "./dolphinlogo";
+import DolphinLogo from "./logo";
 
 const API_URL = "https://dolphine-api-m31w.onrender.com";
 
