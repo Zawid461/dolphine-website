@@ -1,54 +1,36 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const router = express.Router();
-
-const Admin = require("../models/Admin");
 
 router.post("/login", async (req, res) => {
 
   const { username, password } = req.body;
 
-  try {
+  console.log(username, password);
 
-    const admin = await Admin.findOne({ username });
-
-    if (!admin) {
-      return res.status(400).json({
-        message: "Invalid Username"
-      });
-    }
-
-    const isMatch = await bcrypt.compare(
-      password,
-      admin.password
-    );
-
-    if (!isMatch) {
-      return res.status(400).json({
-        message: "Invalid Password"
-      });
-    }
+  // TEMP DEBUG LOGIN
+  if (
+    username === "ahamed" &&
+    password === "Dolphine@2026"
+  ) {
 
     const token = jwt.sign(
-      { id: admin._id },
+      { username },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
 
-    res.json({
+    return res.json({
       token,
-      message: "Login Successful"
-    });
-
-  } catch (err) {
-
-    res.status(500).json({
-      message: err.message
+      message: "Login Success"
     });
 
   }
+
+  return res.status(400).json({
+    message: "Invalid Credentials"
+  });
 
 });
 
